@@ -1,6 +1,6 @@
 <?php
 
-require_once VIEW_PATH . "usersView.php";
+require_once registry::get('views') . "/usersView.php";
 
 class ControllerUser extends Controller
 {

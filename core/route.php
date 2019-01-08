@@ -26,18 +26,18 @@ class Route
 
         // подцепляем файл с классом модели (файла модели может и не быть)
         $modelFile = $modelName . '.php';
-        $modelPath = MODEL_PATH . $modelFile;
+        $modelPath = registry::get('models') . $modelFile;
 
-        if (file_exists($modelPath)) {
-            include MODEL_PATH . $modelFile;
+        if (is_file($modelPath)) {
+            include registry::get('models') . $modelFile;
         }
 
         // подцепляем файл с классом контроллера
         $controllerFile = $controllerName . '.php';
-        $controllerPath = CONTROLLER_PATH . $controllerFile;
+        $controllerPath = registry::get('controllers') . $controllerFile;
 
-        if (file_exists($controllerPath)) {
-            include CONTROLLER_PATH . $controllerFile;
+        if (is_file($controllerPath)) {
+            include registry::get('controllers') . $controllerFile;
         } else {
             Route::ErrorPage404();
         }

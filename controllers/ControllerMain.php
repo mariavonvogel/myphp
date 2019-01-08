@@ -1,6 +1,9 @@
 <?php
 
-require_once MODEL_PATH . 'ModelUser.php';
+require_once registry::get('models') . 'ModelUser.php';
+
+
+
 
 class ControllerMain extends Controller
 {

@@ -16,6 +16,7 @@ class View
 
     public function generate($templateView)
     {
-        include VIEW_PATH . $templateView;
+//        include VIEW_PATH . $templateView;
+        include registry::get('views') . $templateView;
     }
 }
